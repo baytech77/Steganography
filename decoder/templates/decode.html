@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}Decode Message{% endblock %}
+
+{% block content %}
+<div class="bg-white shadow-md rounded-lg max-w-lg w-full p-8 mx-auto">
+  <h1 class="text-3xl font-bold mb-6 text-center text-indigo-600">Decode Message from Image</h1>
+  <form method="post" enctype="multipart/form-data" class="space-y-6">
+    {% csrf_token %}
+    <div>
+      {{ form.encoded_image.label_tag }}
+      {{ form.encoded_image|add_class:"block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100" }}
+    </div>
+    <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-md hover:bg-indigo-700 transition">
+      Decode
+    </button>
+  </form>
+  {% if notification %}
+  <p class="mt-6 text-center text-red-600 font-semibold">{{ notification }}</p>
+  {% endif %}
+  {% if message %}
+  <div class="mt-6 p-4 bg-green-50 border border-green-300 rounded-md">
+    <h2 class="text-lg font-semibold mb-2">Decoded Message:</h2>
+    <p class="whitespace-pre-wrap text-gray-800">{{ message }}</p>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
