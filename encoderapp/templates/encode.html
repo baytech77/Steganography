@@ -5,25 +5,25 @@
 
 {% block content %}
 <div class="bg-white shadow-md rounded-lg max-w-lg w-full p-8 mx-auto">
-  <h1 class="text-3xl font-bold mb-6 text-center text-indigo-600">Encode Message into Image</h1>
+  <h1 class="text-3xl font-bold mb-6 text-center capitalize  text-indigo-600">Encode Message into Image</h1>
   <form method="post" enctype="multipart/form-data" class="space-y-6">
     {% csrf_token %}
     <div>
-      {{ form.cover_image.label_tag }}
-      {{ form.cover_image|add_class:"block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100" }}
+      <p class="text-lg font-semibold mb-1 text-indigo-800">{{ form.cover_image.label_tag }}</p>
+      {{ form.cover_image|add_class:"block w-full font-bold text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md  file:border-0 file:text-sm file:font-bold file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200" }}
     </div>
     <div>
-      {{ form.secret_message.label_tag }}
-      {{ form.secret_message|add_class:"block w-full p-3 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"  }}
+      <p class="text-lg font-semibold mb-1 text-indigo-800">{{ form.secret_message.label_tag }}</p>
+      {{ form.secret_message|add_class:"block w-full p-3 font-normal border border-indigo-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"  }}
     </div>
-    <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-md hover:bg-indigo-700 transition">
+    <button type="submit" class="w-full bg-indigo-600  text-gray-200 font-bold py-3  rounded-md hover:bg-indigo-800 transition">
       Encode
     </button>
   </form>
 
-  {% if encoded_image %}
+  {% if encoded_image_url %}
   <div class="mt-6 text-center">
-    <a href="{% url 'download_encoded_image' %}" class="inline-block bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition">
+    <a href="{% url 'download_encoded_image' encoded_image_instance.pk %}" class="inline-block bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition">
       Download Encoded Image
     </a>
   </div>

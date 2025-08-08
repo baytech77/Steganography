@@ -849,10 +849,6 @@ select {
   margin-right: auto;
 }
 
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -883,6 +879,10 @@ select {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 
 .block {
@@ -1021,6 +1021,24 @@ select {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .scroll-smooth {
   scroll-behavior: smooth;
 }
@@ -1061,6 +1079,11 @@ select {
   border-top-right-radius: 0.25rem;
 }
 
+.rounded-l-sm {
+  border-top-left-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1083,11 +1106,6 @@ select {
   border-color: rgb(134 239 172 / var(--tw-border-opacity, 1));
 }
 
-.border-indigo-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(165 180 252 / var(--tw-border-opacity, 1));
-}
-
 .border-red-400 {
   --tw-border-opacity: 1;
   border-color: rgb(248 113 113 / var(--tw-border-opacity, 1));
@@ -1096,6 +1114,11 @@ select {
 .border-red-500 {
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity, 1));
+}
+
+.border-indigo-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(165 180 252 / var(--tw-border-opacity, 1));
 }
 
 .bg-gray-100 {
@@ -1148,6 +1171,16 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-indigo-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(99 102 241 / var(--tw-bg-opacity, 1));
+}
+
+.bg-indigo-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(129 140 248 / var(--tw-bg-opacity, 1));
+}
+
 .fill-current {
   fill: currentColor;
 }
@@ -1166,6 +1199,10 @@ select {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-2 {
@@ -1212,6 +1249,10 @@ select {
   text-align: center;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .font-serif {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
@@ -1254,12 +1295,24 @@ select {
   font-weight: 500;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.font-thin {
+  font-weight: 100;
+}
+
 .font-normal {
   font-weight: 400;
 }
 
-.font-semibold {
-  font-weight: 600;
+.uppercase {
+  text-transform: uppercase;
 }
 
 .capitalize {
@@ -1276,11 +1329,6 @@ select {
 
 .tracking-normal {
   letter-spacing: 0em;
-}
-
-.text-gray-200 {
-  --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity, 1));
 }
 
 .text-gray-500 {
@@ -1308,11 +1356,6 @@ select {
   color: rgb(79 70 229 / var(--tw-text-opacity, 1));
 }
 
-.text-indigo-800 {
-  --tw-text-opacity: 1;
-  color: rgb(55 48 163 / var(--tw-text-opacity, 1));
-}
-
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity, 1));
@@ -1331,6 +1374,41 @@ select {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-indigo-400 {
+  --tw-text-opacity: 1;
+  color: rgb(129 140 248 / var(--tw-text-opacity, 1));
+}
+
+.text-indigo-500 {
+  --tw-text-opacity: 1;
+  color: rgb(99 102 241 / var(--tw-text-opacity, 1));
+}
+
+.text-indigo-800 {
+  --tw-text-opacity: 1;
+  color: rgb(55 48 163 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity, 1));
 }
 
 .shadow-inner {
@@ -1377,14 +1455,14 @@ select {
   border-width: 0px;
 }
 
-.file\:bg-indigo-100::file-selector-button {
-  --tw-bg-opacity: 1;
-  background-color: rgb(224 231 255 / var(--tw-bg-opacity, 1));
-}
-
 .file\:bg-indigo-50::file-selector-button {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity, 1));
+}
+
+.file\:bg-indigo-100::file-selector-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 231 255 / var(--tw-bg-opacity, 1));
 }
 
 .file\:px-4::file-selector-button {
@@ -1397,17 +1475,27 @@ select {
   padding-bottom: 0.5rem;
 }
 
+.file\:py-3::file-selector-button {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.file\:py-1::file-selector-button {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .file\:text-sm::file-selector-button {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-.file\:font-bold::file-selector-button {
-  font-weight: 700;
-}
-
 .file\:font-semibold::file-selector-button {
   font-weight: 600;
+}
+
+.file\:font-bold::file-selector-button {
+  font-weight: 700;
 }
 
 .file\:text-indigo-700::file-selector-button {
@@ -1452,6 +1540,11 @@ select {
 .hover\:file\:bg-indigo-100::file-selector-button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(224 231 255 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:file\:bg-indigo-300::file-selector-button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(165 180 252 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:file\:bg-indigo-200::file-selector-button:hover {

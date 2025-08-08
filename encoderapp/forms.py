@@ -11,4 +11,7 @@ class EncodeImageForm(forms.ModelForm):
                 'placeholder': 'Enter your secret message here...'
             }),
         }
-        
+
+class DecodeImageForm(forms.Form):
+    encoded_image = forms.ImageField(label='Select Encoded Image')
+
