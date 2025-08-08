@@ -66,7 +66,12 @@ class DecodeImageView(FormView):
         decoded_message = decode_image(encoded_image)
 
         context = self.get_context_data(form=form)
-        context['decoded_message'] = decoded_message
+        if decoded_message == None:
+            context['decode_error'] = "This image is not encoded by this app!!"
+            context['decoded_message'] = None
+        else:
+            context['decoded_message'] = decoded_message
+            context['decode_error'] = None
         return self.render_to_response(context)
     
 
