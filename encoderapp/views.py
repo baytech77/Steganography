@@ -7,12 +7,15 @@ from django.http import FileResponse, Http404
 from django.shortcuts import get_object_or_404
 from PIL import Image
 import io
-import os
 
-from .forms import EncodeImageForm, DecodeImageForm
-from .utility_function import encode_image, decode_image
+
+from .forms import EncodeImageForm
+from utility_function import encode_image
 from .models import EncodedImage
 
+
+class landingView(TemplateView):
+    template_name = 'landing.html'
 
 class EncodeImageView(FormView):
     template_name = "encode.html"
@@ -20,17 +23,6 @@ class EncodeImageView(FormView):
     success_url = reverse_lazy('encode')
 
     def form_valid(self, form):
-
-        # Create model instance without saving to DB yet
-        #encoded_image_instance = form.save(commit=False)
-        
-        # Generate unique filename using UUID
-        #unique_id = uuid.uuid4().hex[:8]
-        #original_filename = form.cleaned_data['cover_image'].name
-        #base_name, ext = os.path.splitext(original_filename)
-        #encoded_filename = f"{base_name}_encoded_{unique_id}{ext}"
-
-
 
         # ensuring each form content are cleaned using pillow
         cover_image = Image.open(form.cleaned_data['cover_image'])
@@ -55,24 +47,6 @@ class EncodeImageView(FormView):
         context['encoded_image_instance'] = encoded_image_instance
         return self.render_to_response(context)
     
-
-
-class DecodeImageView(FormView):
-    template_name = 'decode.html'
-    form_class = DecodeImageForm
-
-    def form_valid(self, form):
-        encoded_image = Image.open(form.cleaned_data['encoded_image'])
-        decoded_message = decode_image(encoded_image)
-
-        context = self.get_context_data(form=form)
-        if decoded_message == None:
-            context['decode_error'] = "This image is not encoded by this app!!"
-            context['decoded_message'] = None
-        else:
-            context['decoded_message'] = decoded_message
-            context['decode_error'] = None
-        return self.render_to_response(context)
     
 
 

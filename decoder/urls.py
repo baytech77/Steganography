@@ -3,5 +3,5 @@ from .views import DecodeImageView
 
 
 urlpatterns = [
-    path('decode/', DecodeImageView.as_view(), name='decode'),
+    path('', DecodeImageView.as_view(), name='decode'),
 ]
