@@ -27,9 +27,10 @@ class EncodeImageView(FormView):
         # ensuring each form content are cleaned using pillow
         cover_image = Image.open(form.cleaned_data['cover_image'])
         secret_message = form.cleaned_data['secret_message']
+        password = form.cleaned_data['password']
 
         # encoding messages into image
-        encoded_image = encode_image(cover_image, secret_message)
+        encoded_image = encode_image(cover_image, secret_message, password)
 
         # saving the encoded_image to in-memory file
         img_io = io.BytesIO()
