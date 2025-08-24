@@ -38,8 +38,8 @@ class EncodeImageView(FormView):
         img_content = ContentFile(img_io.getvalue(), 'encodede_image.png')
         
         # saving to database
-        #encoded_image_instance = EncodedImage(cover_image=form.cleaned_data['cover_image'])
-        #encoded_image_instance.encoded_image.save('encoded_image.png', img_content)
+        encoded_image_instance = EncodedImage(cover_image=form.cleaned_data['cover_image'])
+        encoded_image_instance.encoded_image.save('encoded_image.png', img_content)
         #encoded_image_instance.save()
 
 
