@@ -14,7 +14,7 @@
   <nav class="bg-white shadow-md">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <a href="{% url 'landing' %}" class="text-xl font-bold text-indigo-600 hover:text-indigo-700">StegoApp</a>
-      <ul class="hidden md:flex space-x-6 text-gray-300  font-medium">
+      <ul class="hidden md:flex space-x-6 text-indigo-300  font-medium">
         <li><i class="fa fa-home " aria-hidden="true"></i><a href="{% url 'landing' %}" class=" text-indigo-500 hover:text-indigo-700 font-bold{% if request.path == '/landing'  %}text-indigo-500 {% endif %}">Home</a></li>
         <li><i class="fa fa-lock" aria-hidden="true"></i><a href="{% url 'encode' %}" class=" text-indigo-500 hover:text-indigo-700 font-bold{% if request.path == '/decode'  %}text-indigo-500 {% endif %}">Encode</a></li>
         <li><i class="fa fa-unlock" aria-hidden="true"></i><a href="{% url 'decode' %}" class="text-indigo-500 hover:text-indigo-700 font-bold{% if request.path == '/encode' %}text-indigo-500 {% endif %}">Decode</a></li>
@@ -29,7 +29,7 @@
     </div>
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden  md:hidden bg-white shadow-md">
-      <ul class="flex flex-col text-right space-y-2 p-4  text-gray-300 font-medium">
+      <ul class="flex flex-col text-right space-y-2 p-4  text-indigo-300 font-medium">
         <li><i class="fa fa-home" aria-hidden="true"></i><a href="{% url 'landing' %}" class="text-indigo-500 hover:text-indigo-700 font-bold{% if request.path == '/landing' %}text-indigo-500 {% endif %}">Home</a></li>
         <li><i class="fa fa-lock" aria-hidden="true"></i><a href="{% url 'encode' %}" class=" text-indigo-500 block text-sm hover:text-indigo-700 font-bold{% if request.path == '/decode' %}text-indigo-500 {% endif %}">Encode</a></li>
         <li><i class="fa fa-unlock" aria-hidden="true"></i><a href="{% url 'decode' %}" class="text-indigo-500 block text-sm hover:text-indigo-700 font-bold{% if request.path == '/encode' %}text-indigo-500 {% endif %} ">Decode</a></li>
