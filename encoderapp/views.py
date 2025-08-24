@@ -22,7 +22,7 @@ class EncodeImageView(FormView):
     template_name = "encode.html"
     form_class = EncodeImageForm
     success_url = reverse_lazy('encode')
-
+    @csrf_exempt
     def form_valid(self, form):
 
         # ensuring each form content are cleaned using pillow
