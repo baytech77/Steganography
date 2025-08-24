@@ -15,7 +15,7 @@
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <a href="{% url 'landing' %}" class="text-xl font-bold text-indigo-600 hover:text-indigo-700">StegoApp</a>
       <ul class="hidden md:flex space-x-6 text-indigo-600  font-medium">
-        <li><i class="fa fa-home" aria-hidden="true"></i><a href="{% url 'landing' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/landing'  %}text-indigo-500 {% endif %}">Home</a></li>
+        <li><i class="fa fa-home" aria-hidden="true"><a href="{% url 'landing' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/landing'  %}text-indigo-500 {% endif %}">Home</a></i></li>
         <li><a href="{% url 'encode' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/decode'  %}text-indigo-500 {% endif %}">Encode</a></li>
         <li><a href="{% url 'decode' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/encode' %}text-indigo-500 {% endif %}">Decode</a></li>
       </ul>
