@@ -14,9 +14,9 @@
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <a href="{% url 'landing' %}" class="text-xl font-bold text-indigo-600 hover:text-indigo-700">StegoApp</a>
       <ul class="hidden md:flex space-x-6 text-indigo-600  font-medium">
-        <li><a href="{% url 'landing' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/decode' or if request.path == '/encode'  %}text-indigo-500 {% endif %}">Home</a></li>
-        <li><a href="{% url 'encode' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/decode' or if request.path == '/landing' %}text-indigo-500 {% endif %}">Encode</a></li>
-        <li><a href="{% url 'decode' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/encode' or if request.path == '/landing' %}text-indigo-500 {% endif %}">Decode</a></li>
+        <li><a href="{% url 'landing' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/decode' or '/encode'  %}text-indigo-500 {% endif %}">Home</a></li>
+        <li><a href="{% url 'encode' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/decode' or  '/landing' %}text-indigo-500 {% endif %}">Encode</a></li>
+        <li><a href="{% url 'decode' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/encode' or '/landing' %}text-indigo-500 {% endif %}">Decode</a></li>
       </ul>
       <!-- Mobile menu button -->
       <button id="mobile-menu-button" class="md:hidden focus:outline-none">
@@ -29,9 +29,9 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden  md:hidden bg-white shadow-md">
       <ul class="flex flex-col text-right space-y-2 p-4  text-indigo-700 font-medium">
-        <li><a href="{% url 'landing' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/decode' or if request.path == '/encode' %}text-indigo-500 {% endif %}">Home</a></li>
-        <li><a href="{% url 'encode' %}" class="block text-sm hover:text-indigo-700 font-bold{% if request.path == '/decode' or if request.path == '/landing' %}text-indigo-500 {% endif %}">Encode</a></li>
-        <li><a href="{% url 'decode' %}" class="block text-sm hover:text-indigo-700 font-bold{% if request.path == '/encode' or if request.path == '/landing' %}text-indigo-500 {% endif %} ">Decode</a></li>
+        <li><a href="{% url 'landing' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/decode' or '/encode' %}text-indigo-500 {% endif %}">Home</a></li>
+        <li><a href="{% url 'encode' %}" class="block text-sm hover:text-indigo-700 font-bold{% if request.path == '/decode' or '/landing' %}text-indigo-500 {% endif %}">Encode</a></li>
+        <li><a href="{% url 'decode' %}" class="block text-sm hover:text-indigo-700 font-bold{% if request.path == '/encode' or  '/landing' %}text-indigo-500 {% endif %} ">Decode</a></li>
       </ul>
     </div>
   </nav>
