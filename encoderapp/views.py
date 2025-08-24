@@ -1,5 +1,4 @@
 from django.views.generic.edit import FormView
-from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView
@@ -22,7 +21,7 @@ class EncodeImageView(FormView):
     template_name = "encode.html"
     form_class = EncodeImageForm
     success_url = reverse_lazy('encode')
-    @csrf_exempt
+    
     def form_valid(self, form):
 
         # ensuring each form content are cleaned using pillow
@@ -53,7 +52,7 @@ class EncodeImageView(FormView):
 
 
 class DownloadEncodedImageView(View):
-    @csrf_exempt
+    
     def get(self, request, pk):
         encoded_image_instance = get_object_or_404(EncodedImage, pk=pk)
         if not encoded_image_instance.encoded_image:
