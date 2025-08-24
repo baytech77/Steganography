@@ -86,14 +86,10 @@ WSGI_APPLICATION = 'Image_steganography.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Steganography',
-        'USER': 'postgres',
-        'PASSWORD': 'BAYu@1234',
-        'HOST': '0.0.0.0',
-        'PORT': '8000',
-    }
+    'default':dj_database_url.config(
+        default='postgresql://postgres:BAYu@1234@localhost:5432/Steganography',
+        conn_max_age=600
+    )
 }
 
 
