@@ -29,7 +29,7 @@
     </div>
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden  md:hidden justify-between bg-white shadow-md">
-      <ul class="flex  text-left space-y-2 p-4  text-indigo-500 font-medium">
+      <ul class="flex flex-col text-left space-y-2 p-4  text-indigo-500 font-medium">
         <li><i class="fa fa-home" aria-hidden="true"></i><a href="{% url 'landing' %}" class="text-indigo-500 hover:text-indigo-700 font-bold{% if request.path == '/landing' %}text-indigo-500 {% endif %}">Home</a></li>
         <li><span><i class="fa fa-lock" aria-hidden="true"></i><a href="{% url 'encode' %}" class=" text-indigo-500 block text-sm hover:text-indigo-700 font-bold{% if request.path == '/decode' %}text-indigo-500 {% endif %}">Encode</a></span></li>
         <li><span><i class="fa fa-unlock" aria-hidden="true"></i><a href="{% url 'decode' %}" class="text-indigo-500 block text-sm hover:text-indigo-700 font-bold{% if request.path == '/encode' %}text-indigo-500 {% endif %} ">Decode</a></span></li>
