@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% block title %}Image Steganography App{% endblock %}</title>
+  <link rel="stlesheet" href="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" </link 
   {% tailwind_css %}
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col">
@@ -14,7 +15,7 @@
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <a href="{% url 'landing' %}" class="text-xl font-bold text-indigo-600 hover:text-indigo-700">StegoApp</a>
       <ul class="hidden md:flex space-x-6 text-indigo-600  font-medium">
-        <li><a href="{% url 'landing' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/landing'  %}text-indigo-500 {% endif %}">Home</a></li>
+        <li><i class="fa fa-home" aria-hidden="true"></i><a href="{% url 'landing' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/landing'  %}text-indigo-500 {% endif %}">Home</a></li>
         <li><a href="{% url 'encode' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/decode'  %}text-indigo-500 {% endif %}">Encode</a></li>
         <li><a href="{% url 'decode' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/encode' %}text-indigo-500 {% endif %}">Decode</a></li>
       </ul>
@@ -29,7 +30,7 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden  md:hidden bg-white shadow-md">
       <ul class="flex flex-col text-right space-y-2 p-4  text-indigo-700 font-medium">
-        <li><a href="{% url 'landing' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/landing' %}text-indigo-500 {% endif %}">Home</a></li>
+        <li><i class="fa fa-home" aria-hidden="true"></i><a href="{% url 'landing' %}" class="hover:text-indigo-700 font-bold{% if request.path == '/landing' %}text-indigo-500 {% endif %}">Home</a></li>
         <li><a href="{% url 'encode' %}" class="block text-sm hover:text-indigo-700 font-bold{% if request.path == '/decode' %}text-indigo-500 {% endif %}">Encode</a></li>
         <li><a href="{% url 'decode' %}" class="block text-sm hover:text-indigo-700 font-bold{% if request.path == '/encode' %}text-indigo-500 {% endif %} ">Decode</a></li>
       </ul>
@@ -56,6 +57,7 @@
       menu.classList.toggle('hidden');
     });
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/js/all.min.js" crossorigin="anonymous"></script>
 
   {% block extra_scripts %}{% endblock %}
 </body>
