@@ -1,4 +1,5 @@
 from django.views.generic.edit import FormView
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView
@@ -52,7 +53,7 @@ class EncodeImageView(FormView):
 
 
 class DownloadEncodedImageView(View):
-
+    @crsf_exempt
     def get(self, request, pk):
         encoded_image_instance = get_object_or_404(EncodedImage, pk=pk)
         if not encoded_image_instance.encoded_image:
