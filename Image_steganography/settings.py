@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'Steganography',
         'USER': 'postgres',
         'PASSWORD': 'BAYu@1234',
-        'HOST': 'localhost',
+        'HOST': '0.0.0.0',
         'PORT': '8000',
     }
 }
