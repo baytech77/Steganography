@@ -7,7 +7,7 @@
   <title>{% block title %}Image Steganography App{% endblock %}</title>
   {% tailwind_css %}
 </head>
-<body class="bg-gray-200  flex flex-col">
+<body class="bg-gray-200 min-h-sceen flex flex-col">
 
   <!-- Navigation -->
   <nav class="bg-white shadow-md">
@@ -35,7 +35,7 @@
   </nav>
 
   <!-- Main content -->
-  <main class="flex-grow container mx-auto p-6 py-8 max-w-4xl">
+  <main class="flex-grow  mx-auto p-6 py-8 max-w-4xl">
     {% block content %}
     <!-- Child templates inject content here -->
     {% endblock %}
