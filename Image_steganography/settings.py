@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'Image_steganography.wsgi.application'
 
 DATABASES = {
     'default':dj_database_url.config(
-        default='postgresql://steganography_xcrv_user:0IoKf0MYilMD20WFOvHfQFaspZRDPTr2@dpg-d2l93kh5pdvs73aenvq0-a.oregon-postgres.render.com/steganography_xcrv',
+        default='postgresql://stegoapp_database_user:RJRlOnO0shwXgRn4C9J86SstXmuqV54v@dpg-d3i0nogdl3ps73fgnnrg-a.oregon-postgres.render.com/stegoapp_database',
         conn_max_age=600
     )
 }
