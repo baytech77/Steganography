@@ -5,6 +5,8 @@
 
 {% block content %}
 <div class="bg-white shadow-md rounded-lg max-w-lg w-full p-8 mx-auto">
+  <p><a href="{% url 'landing' %}" class="text-gray-500 hover:text-indigo-700 font-semibold ">home</a> <span class="px-10"><a href="{% url 'decode' %}" class="text-gray-500 hover:text-indigo-700 font-semibold ">&lt;back</a></span></p>
+  <hr class="mb-3  border-green-500">
   <h1 class="text-3xl font-bold mb-6 text-center capitalize  text-indigo-600">Encode Message into Image</h1>
   <form method="post" enctype="multipart/form-data" class="space-y-6">
     {% csrf_token %}
