@@ -4,7 +4,7 @@ import base64
 import hashlib
 
 
-SIGNATURE = "StegoApp: \n\n"
+
 
 def key_generation(password: str) -> bytes:
     # Deriving a key from password using SHA-256
@@ -53,7 +53,7 @@ def encode_image(image, secret_message, password):
         raise ValueError("Encryption failed!!")
     
     message_with_signature = SIGNATURE + encrypted_message
-    binary_message = binary_converter(message_with_signature) + "1111111111111110" # helps to mark the end of the embedded data  
+    binary_message = binary_converter(message_with_signature) + "11111111111" # helps to mark the end of the embedded data  
     data_index = 0
     img = image.convert('RGB')
     pixels = list(img.getdata())
